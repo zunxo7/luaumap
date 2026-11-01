@@ -1,14 +1,15 @@
 {
   "name": "luaumap",
   "displayName": "Luaumap",
-  "version": "1.0.2",
-  "description": "Token-cheap structural map of Roblox/Luau projects: module summaries, definitions, callers, remotes, attributes and tags without reading whole files.",
+  "version": "1.0.3",
+  "description": "Structural code map for Roblox/Luau projects: module summaries, definitions, callers, remotes, attributes and tags in a few lines instead of whole files.",
   "author": {
-    "name": "Zun",
+    "name": "zunxo7",
     "url": "https://github.com/zunxo7"
   },
   "homepage": "https://github.com/zunxo7/luaumap",
   "repository": "https://github.com/zunxo7/luaumap",
   "license": "MIT",
-  "keywords": ["roblox", "luau", "rojo", "code-index", "tokens"]
+  "keywords": ["roblox", "luau", "rojo", "code-index", "context"],
+  "icon": "./.claude-plugin/icon.png"
 }

@@ -1,15 +1,15 @@
 {
   "name": "luaumap",
-  "description": "Luaumap: a token-cheap code map for Roblox/Luau projects.",
+  "description": "Luaumap: a structural code map for Roblox/Luau projects.",
   "owner": {
-    "name": "Zun",
+    "name": "zunxo7",
     "url": "https://github.com/zunxo7"
   },
   "plugins": [
     {
       "name": "luaumap",
       "source": "./",
-      "description": "Token-cheap structural map of Roblox/Luau projects: module summaries, definitions, callers, remotes, attributes and tags without reading whole files.",
+      "description": "Structural code map for Roblox/Luau projects: module summaries, definitions, callers, remotes, attributes and tags in a few lines instead of whole files.",
       "category": "development",
       "tags": ["roblox", "luau", "rojo"]
     }

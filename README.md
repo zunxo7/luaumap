@@ -16,7 +16,7 @@ It knows Roblox: Rojo paths, `require(script.Parent.X)`, remotes and their roles
 
 ## Requirements
 
-- **Python 3.8 or newer.** That's the only dependency: no pip packages, and no Rojo, Luau or Studio install, since it reads your files directly. Check with `python --version` (or `python3`/`py`). To install: Windows `winget install Python.Python.3.12`, macOS `brew install python`, Linux `sudo apt install python3`. If Python is missing, the skill tells you and Claude falls back to normal file reading.
+- **Python 3.8 or newer.** That's the only dependency: no pip packages, and no Rojo, Luau or Studio install, since it reads your files directly. Check with `python --version` (or `python3`/`py`); get it from [python.org](https://www.python.org/downloads/) if needed. If Python is missing, the skill tells you and Claude falls back to normal file reading.
 - **A Rojo project** (`default.project.json`, or any Rojo-compatible `*.project.json` such as Argon's) gives full results. Without one it still indexes the folders, but requires that go through game services (`ReplicatedStorage.Shared.X`) can't be linked.
 
 ## Install
