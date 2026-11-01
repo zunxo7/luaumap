@@ -1,7 +1,7 @@
 {
   "name": "luaumap",
   "displayName": "Luaumap",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Structural code map for Roblox/Luau projects: module summaries, definitions, callers, remotes, attributes and tags in a few lines instead of whole files.",
   "author": {
     "name": "zunxo7",
@@ -10,6 +10,15 @@
   "homepage": "https://github.com/zunxo7/luaumap",
   "repository": "https://github.com/zunxo7/luaumap",
   "license": "MIT",
-  "keywords": ["roblox", "luau", "rojo", "code-index", "context"],
-  "icon": "./.claude-plugin/icon.png"
+  "keywords": [
+    "roblox",
+    "luau",
+    "rojo",
+    "code-index",
+    "context"
+  ],
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://github.com/zunxo7/luaumap#readme",
+  "supportUrl": "https://github.com/zunxo7/luaumap/issues",
+  "privacyPolicyUrl": "https://github.com/zunxo7/luaumap/blob/main/PRIVACY.md"
 }
