@@ -1,7 +1,7 @@
 {
   "name": "luaumap",
   "displayName": "Luaumap",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Structural code map of Roblox/Luau projects for AI coding agents: module summaries, definitions, callers, remotes, attributes and tags in a few lines instead of whole files.",
   "author": {
     "name": "zunxo7",

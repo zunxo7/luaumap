@@ -6,11 +6,13 @@ Coding agents burn most of their context reading whole files and grepping to ans
 
 | Question (measured on a ~500-file Roblox game) | Luaumap | Usual way |
 |---|---|---|
-| What does a 56 KB server module expose | 2.8K chars | 55.6K (read the file) |
-| Who fires and listens to a remote | 202 | 602 (grep, then grep the variable) |
-| Who reads a config field | 82 | 952 |
-| Who calls an object method (`profile:EndSession()`) | 46 | 3.6K (grep, then read the file) |
-| Project overview | 5.3K | 17.8K (file list alone) |
+| What a 56 KB server module exposes | 1,348 tokens | 24,347 (read the file) |
+| Who fires and listens to a remote | 102 | 207 (grep) |
+| Who reads a config field | 41 | 487 (grep) |
+| Who calls an object method (`profile:EndSession()`) | 26 | 336 (grep) |
+| Project overview | 2,362 | 8,837 (file list alone) |
+
+Tokens counted with Anthropic's token-counting API (Claude); OpenAI's `o200k` tokenizer shows the same ratios. Grep's answers also need follow-up reads to tell real calls from text matches, so the real gap is bigger.
 
 It knows Roblox: Rojo paths, `require(script.Parent.X)`, remotes and their roles (`FireServer`, `OnServerEvent`, `OnServerInvoke`…), attributes, CollectionService tags, server/client/shared sides, and objects built with `Class.new` or `setmetatable`.
 
