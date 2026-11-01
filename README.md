@@ -32,12 +32,7 @@ Updates arrive through `/plugin`. Claude picks the skill up on its own when it w
 
 ### Manual
 
-Copy `skills/luaumap` into your personal skills folder:
-
-```
-git clone https://github.com/zunxo7/luaumap
-cp -r luaumap/skills/luaumap ~/.claude/skills/luaumap
-```
+Download this repository and copy its `skills/luaumap` folder into your personal skills folder (`.claude/skills/` in your home folder).
 
 ### Other agents or plain terminal
 
