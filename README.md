@@ -14,6 +14,11 @@ Coding agents burn most of their context reading whole files and grepping to ans
 
 It knows Roblox: Rojo paths, `require(script.Parent.X)`, remotes and their roles (`FireServer`, `OnServerEvent`, `OnServerInvoke`…), attributes, CollectionService tags, server/client/shared sides, and objects built with `Class.new` or `setmetatable`.
 
+## Requirements
+
+- **Python 3.8 or newer.** That's the only dependency: no pip packages, and no Rojo, Luau or Studio install, since it reads your files directly. Check with `python --version` (or `python3`/`py`). To install: Windows `winget install Python.Python.3.12`, macOS `brew install python`, Linux `sudo apt install python3`. If Python is missing, the skill tells you and Claude falls back to normal file reading.
+- **A Rojo project** (`default.project.json`, or any Rojo-compatible `*.project.json` such as Argon's) gives full results. Without one it still indexes the folders, but requires that go through game services (`ReplicatedStorage.Shared.X`) can't be linked.
+
 ## Install
 
 ### Claude Code plugin (recommended)
@@ -36,13 +41,11 @@ cp -r luaumap/skills/luaumap ~/.claude/skills/luaumap
 
 ### Other agents or plain terminal
 
-It is a normal CLI with no dependencies. Point your agent's instructions at it, or run it yourself:
+It is a normal CLI that needs only Python. Point your agent's instructions at it, or run it yourself:
 
 ```
 python path/to/skills/luaumap map
 ```
-
-**Requirements:** Python 3.8+ (standard library only) and a Rojo project (`default.project.json`) or a `.luaumap.json` at the repo root.
 
 ## Use
 

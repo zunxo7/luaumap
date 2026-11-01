@@ -1,7 +1,7 @@
 {
   "name": "luaumap",
   "displayName": "Luaumap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Token-cheap structural map of Roblox/Luau projects: module summaries, definitions, callers, remotes, attributes and tags without reading whole files.",
   "author": {
     "name": "Zun",

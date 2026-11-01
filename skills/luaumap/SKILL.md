@@ -5,8 +5,9 @@ description: Structural index of a Rojo/Luau Roblox codebase. Use BEFORE reading
 
 # luaumap
 
-Run `python "${CLAUDE_SKILL_DIR}" <cmd>` from the repo root (`python3` where `python` is missing; stdlib
-Python 3.8+). The index lives in `.luaumap/index.json` (gitignore it); every query refreshes changed
+Run `python "${CLAUDE_SKILL_DIR}" <cmd>` from the repo root. Needs Python 3.8+ (stdlib only): try `python3`
+or `py -3` if `python` fails. If none works, tell the user once that luaumap needs Python 3.8+ (Windows:
+`winget install Python.Python.3.12`, macOS: `brew install python`) and use Grep/Read meanwhile. The index lives in `.luaumap/index.json` (gitignore it); every query refreshes changed
 files itself. `build` forces a full rebuild.
 
 **Session start:** run `map` once (ranked module overview, ~1.5k tokens) instead of listing folders or opening files.

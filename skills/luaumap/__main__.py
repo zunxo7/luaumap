@@ -1,4 +1,4 @@
-"""Entry point: python Research/tools/luaumap <command> ...  (stdlib only, Python 3.8+)."""
+"""Entry point: python <luaumap folder> <command> ...  (stdlib only, Python 3.8+)."""
 import os
 import sys
 
