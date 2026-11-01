@@ -114,6 +114,13 @@ Everything has a default; most projects need no config.
 - String requires that the Rojo tree can't place fall back to a path relative to the file, as in Luau's require-by-string.
 - Output is ranked and trimmed to a token budget, signatures only, never function bodies.
 
+## What it does on your machine
+
+- Claude runs one local Python script, `skills/luaumap/__main__.py`, with the command it picked (`map`, `summary`, …).
+- The script reads your project's `.lua`/`.luau` files, the Rojo project file and the optional `.luaumap.json`.
+- It writes one file, the index at `.luaumap/index.json` in your project.
+- It makes no network connections, sends no data anywhere, and needs no account or API key.
+
 ## Limits
 
 - Names that only exist at runtime stay unknown (loops over `GetAttributes()`/`GetTags()`, names looked up from data, user input). `doctor` lists every one so the agent knows to fall back to grep.
