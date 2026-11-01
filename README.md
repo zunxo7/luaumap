@@ -1,6 +1,6 @@
 # Luaumap
 
-A token-cheap map of your Roblox/Luau codebase, built for Claude Code.
+A token-cheap map of your Roblox/Luau codebase for AI coding agents: Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, Windsurf and any other agent that supports [Agent Skills](https://agentskills.io).
 
 Coding agents burn most of their context reading whole files and grepping to answer simple questions: what does this module expose, who fires this remote, who sets this attribute. Luaumap indexes a Rojo project once and answers those questions in a few lines, so the agent opens only the lines it actually needs.
 
@@ -16,27 +16,37 @@ It knows Roblox: Rojo paths, `require(script.Parent.X)`, remotes and their roles
 
 ## Requirements
 
-- **Python 3.8 or newer.** That's the only dependency: no pip packages, and no Rojo, Luau or Studio install, since it reads your files directly. Check with `python --version` (or `python3`/`py`); get it from [python.org](https://www.python.org/downloads/) if needed. If Python is missing, the skill tells you and Claude falls back to normal file reading.
+- **Python 3.8 or newer.** That's the only dependency: no pip packages, and no Rojo, Luau or Studio install, since it reads your files directly. Check with `python --version` (or `python3`/`py`); get it from [python.org](https://www.python.org/downloads/) if needed. If Python is missing, the skill tells you and the agent falls back to normal file reading.
 - **A Rojo project** (`default.project.json`, or any Rojo-compatible `*.project.json` such as Argon's) gives full results. Without one it still indexes the folders, but requires that go through game services (`ReplicatedStorage.Shared.X`) can't be linked.
 
 ## Install
 
-### Claude Code plugin (recommended)
+Luaumap is an [Agent Skill](https://agentskills.io), the open skill format that most coding agents now read. The agent picks it up on its own when it works in a Luau project.
+
+### Any agent
+
+```
+npx skills add zunxo7/luaumap
+```
+
+The [skills CLI](https://github.com/vercel-labs/skills) (needs Node.js) detects the agents you have and installs Luaumap into each one: Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot, Windsurf, Cline, OpenCode, Roo Code, Kiro and [many more](https://github.com/vercel-labs/skills/blob/main/docs/agents.md). Add `-g` to install it for all your projects instead of the current one.
+
+### Claude Code plugin
 
 ```
 /plugin marketplace add zunxo7/luaumap
 /plugin install luaumap@luaumap
 ```
 
-Updates arrive through `/plugin`. Claude picks the skill up on its own when it works in a Luau project.
+Updates arrive through `/plugin`.
 
 ### Manual
 
-Download this repository and copy its `skills/luaumap` folder into your personal skills folder (`.claude/skills/` in your home folder).
+Download this repository and copy its `skills/luaumap` folder into your agent's skills folder, for example `.claude/skills/`, `.agents/skills/` (Codex, Cursor, Gemini CLI, Copilot, OpenCode) or `.windsurf/skills/`.
 
-### Other agents or plain terminal
+### Plain terminal
 
-It is a normal CLI that needs only Python. Point your agent's instructions at it, or run it yourself:
+It is a normal CLI that needs only Python, so you can run it yourself too:
 
 ```
 python path/to/skills/luaumap map
@@ -111,7 +121,7 @@ Everything has a default; most projects need no config.
 
 ## What it does on your machine
 
-- Claude runs one local Python script, `skills/luaumap/__main__.py`, with the command it picked (`map`, `summary`, …).
+- The agent runs one local Python script, `skills/luaumap/__main__.py`, with the command it picked (`map`, `summary`, …).
 - The script reads your project's `.lua`/`.luau` files, the Rojo project file and the optional `.luaumap.json`.
 - It writes one file, the index at `.luaumap/index.json` in your project.
 - It makes no network connections, sends no data anywhere, and needs no account or API key.
